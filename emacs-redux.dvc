@@ -1,0 +1,581 @@
+MENU "terminal-emacs.dvc" {
+STATE "" {
+
+LIST "say-list" {
+    "yes"
+    "no"
+}
+
+COMMAND "say <say-list>" {
+    SCRIPT {
+        SendKeys _arg1 + "{Enter}"
+    }
+}
+
+LIST "last" {
+    "last"
+    "previous"
+    "back"
+}
+
+LIST "next" {
+    "next"
+    "forward"
+    "jump"
+    "right"
+}
+
+LIST "down" {
+    "next"
+    "forward"
+    "jump"
+    "down"
+}
+
+LIST "back" {
+    "back"
+    "previous"
+    "left"
+}
+
+LIST "up" {
+    "back"
+    "previous"
+    "up"
+}
+
+COMMAND "save" {
+    KEYS {
+        {Ctrl+x}{Ctrl+s}
+    }
+}
+
+COMMAND "kill emacs" {
+    KEYS {
+        {Ctrl+x}{Ctrl+c}
+    }
+}
+
+COMMAND "save and quit" {
+    KEYS {
+        {Ctrl+x}{Ctrl+s}
+        {Ctrl+x}{Ctrl+c}
+    }
+}
+
+COMMAND "compile" {
+    KEYS {
+        {Esc}xcompile{Enter}
+    }
+}
+
+COMMAND "save compile" {
+    KEYS {
+        {Ctrl+x}{Ctrl+s}
+        {Esc}xrecompile{Enter}
+    }
+}
+
+COMMAND "suspend emacs" {
+    KEYS {
+        {Ctrl+x}{Ctrl+z}
+    }
+}
+
+COMMAND "find file" {
+    KEYS {
+        {Ctrl+x}{Ctrl+f}
+    }
+}
+
+COMMAND "search" {
+    KEYS {
+        {Ctrl+s}
+    }
+}
+
+COMMAND "search again" {
+    KEYS {
+        {Ctrl+s}{Ctrl+s}
+    }
+}
+
+COMMAND "back search" {
+    KEYS {
+        {Ctrl+r}
+    }
+}
+
+COMMAND "back search again" {
+    KEYS {
+        {Ctrl+r}{Ctrl+r}
+    }
+}
+
+COMMAND "jump error" {
+    KEYS {
+        {Ctrl+x}`
+    }
+}
+
+COMMAND "next error" {
+    KEYS {
+        {Ctrl+x}`
+    }
+}
+
+COMMAND "other window" {
+    KEYS {
+        {Ctrl+x}o
+    }
+}
+
+COMMAND "scroll other" {
+    KEYS {
+        {Esc}xscroll-other-window{Enter}
+    }
+}
+
+COMMAND "scroll up other" {
+    KEYS {
+        {Esc}xscroll-other-window-down{Enter}
+    }
+}
+
+COMMAND "other end" {
+    KEYS {
+        {Esc}xend-of-buffer-other-window{Enter}
+    }
+}
+
+COMMAND "repeat" {
+    KEYS {
+        {Ctrl+x}z
+    }
+}
+
+COMMAND "next line" {
+    KEYS {
+        {Ctrl+n}
+    }
+}
+
+COMMAND "kill this line" {
+    KEYS {
+        {Esc}xkill-whole-line{Enter}
+    }
+}
+
+COMMAND "cancel" {
+    KEYS {
+        {Ctrl+g}
+    }
+}
+
+COMMAND "recenter" {
+    KEYS {
+        {Ctrl+l}
+    }
+}
+
+COMMAND "control slash" {
+    KEYS {
+        {Ctrl+/}
+    }
+}
+
+COMMAND "meta space" {
+    KEYS {
+        {Esc}{Space}
+    }
+}
+
+COMMAND "transpose words" {
+    KEYS {
+        {Esc}xtranspose words{Enter}
+    }
+}
+
+COMMAND "transpose lines" {
+    KEYS {
+        {Esc}xtranspose lines{Enter}
+    }
+}
+
+COMMAND "line start" {
+    KEYS {
+        {Ctrl+a}
+    }
+}
+
+COMMAND "line end" {
+    KEYS {
+        {Ctrl+e}
+    }
+}
+
+COMMAND "end of line" {
+    KEYS {
+        {Ctrl+e}
+    }
+}
+
+COMMAND "yank" {
+    KEYS {
+        {Ctrl+y}
+    }
+}
+
+COMMAND "pop yank" {
+    KEYS {
+        {Esc}xyank-pop{Enter}
+    }
+}
+
+COMMAND "yank pop" {
+    KEYS {
+        {Esc}xyank-pop{Enter}
+    }
+}
+
+COMMAND "set mark" {
+    KEYS {
+        {Ctrl+Space}
+    }
+}
+
+COMMAND "copy to register" {
+    KEYS {
+        {Esc}xcopy-to-register{Enter}
+    }
+}
+
+COMMAND "insert register" {
+    KEYS {
+        {Esc}xinsert-register{Enter}
+    }
+}
+
+COMMAND "copy to register <1to20>" {
+    SCRIPT {
+        SendKeys "{Esc}xcopy-to-register{Enter}" + _arg1 + "{Enter}"
+    }
+}
+
+COMMAND "insert register <1to20>" {
+    SCRIPT {
+        SendKeys "{Esc}xinsert-register{Enter}" + _arg1 + "{Enter}"
+    }
+}
+
+COMMAND "<next> word" {
+    KEYS {
+        {Alt+f}
+    }
+}
+
+COMMAND "<back> word" {
+    KEYS {
+        {Alt+b}
+    }
+}
+
+COMMAND "<down> line" {
+    KEYS {
+        {Ctrl+n}
+    }
+}
+
+COMMAND "<up> line" {
+    KEYS {
+        {Ctrl+p}
+    }
+}
+
+COMMAND "<next> <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Alt+f}"
+    }
+}
+
+COMMAND "<back> <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Alt+b}"
+    }
+}
+
+COMMAND "<down> <1to20> lines" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Ctrl+n}"
+    }
+}
+
+COMMAND "<up> <1to20> lines" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Ctrl+p}"
+    }
+}
+
+LIST "kill-list" {
+    "buffer"
+    "this buffer"
+    "some buffers"
+    "compilation"
+    "whole line"
+    "grep"
+}
+
+COMMAND "kill <kill-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xkill " + _arg1 + "{Enter}"
+    }
+}
+
+LIST "mark-list" {
+    "buffer"
+    "line"
+    "sentence"
+    "paragraph"
+    "word"
+}
+
+COMMAND "mark <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg1 + "{Enter}"
+    }
+}
+
+LIST "region-list" {
+    "region"
+    "that"
+}
+
+LIST "region-command-list" {
+    "kill"
+    "indent"
+    "comment"
+    "downcase"
+    "upcase"
+}
+
+COMMAND "<region-command-list> <region-list>" {
+    SCRIPT {
+        SendKeys "{Esc}x" + _arg1 + " region" + "{Enter}"
+    }
+}
+
+COMMAND "<region-command-list> <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg2 + "{Enter}" + "{Esc}x" + _arg1 + " region" + "{Enter}"
+    }
+}
+
+COMMAND "replace <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg1 + "{Enter}" + "{Esc}xreplace-string{Enter}"
+    }
+}
+
+COMMAND "copy <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg1 + "{Enter}" + "{Alt+w}"
+    }
+}
+
+LIST "emacs-commands" {
+    "doxymacs find next func"
+    "doxymacs font lock"
+    "doxymacs insert blank multiline comment"
+    "doxymacs insert blank singleline comment"
+    "doxymacs insert file comment"
+    "doxymacs insert function comment"
+    "doxymacs insert grouping comments"
+    "doxymacs insert member comment"
+    "doxymacs lookup"
+    "doxymacs mode"
+    "doxymacs rescan tags"
+    "doxymacs version"
+    "hippie expand"
+    "join line"
+    "open line"
+    "eval buffer"
+    "eval expression"
+    "load library"
+    "recover this file"
+    "replace buffer in windows"
+    "replace rectangle"
+    "replace regexp"
+    "replace string"
+    "server edit"
+    "shell command"
+    "shell command on region"
+    "shell script mode"
+    "scroll up"
+    "scroll down"
+    "linum mode"
+    "snippet mode"
+}
+
+COMMAND "<emacs-commands>" {
+    SCRIPT {
+        SendKeys "{Esc}x" + _arg1 + "{Enter}"
+    }
+}
+
+LIST "undo-that" {
+    "undo"
+    "undo that"
+}
+
+COMMAND "<undo-that>" {
+    KEYS {
+        {Ctrl+/}
+    }
+}
+
+COMMAND "<undo-that> <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Ctrl+/}"
+    }
+}
+
+COMMAND "<next> tab" {
+    SCRIPT {
+        SendKeys "{Esc}xtabbar-forward{Enter}"
+    }
+}
+
+COMMAND "<back> tab" {
+    SCRIPT {
+        SendKeys "{Esc}xtabbar-backward{Enter}"
+    }
+}
+
+LIST "go-to-line" {
+    "go to line"
+    "line"
+    "jump line"
+}
+
+COMMAND "<go-to-line>" {
+    KEYS {
+        {Alt+g}
+    }
+}
+
+COMMAND "<go-to-line> <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Alt+g}"
+    }
+}
+
+COMMAND "<go-to-line> <1to20> <0to9>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + _arg3 + "{Alt+g}"
+    }
+}
+
+COMMAND "<go-to-line> <1to20> <0to9> <0to9>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + _arg3 + _arg4 + "{Alt+g}"
+    }
+}
+
+COMMAND "repeat <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg1 + "{Ctrl+x}z"
+    }
+}
+
+COMMAND "kill <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg1) + "{Ctrl+d}"
+    }
+}
+
+COMMAND "kill word" {
+    KEYS {
+        {Alt+d}
+    }
+}
+
+COMMAND "kill <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg1) + "{Alt+d}"
+    }
+}
+
+COMMAND "kill <last> word" {
+    KEYS {
+        {Esc}{Backspace}
+    }
+}
+
+COMMAND "kill <last> <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg2) + "{Esc}{Backspace}"
+    }
+}
+
+COMMAND "kill <1to20> lines" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg1) + "{Esc}xkill-whole-line{Enter}"
+    }
+}
+
+COMMAND "<next> buffer" {
+    KEYS {
+        {Esc}xnext-buffer{Enter}
+    }
+}
+
+LIST "buffer-list" {
+    "compilation"
+    "shell"
+    "scratch"
+}
+
+COMMAND "switch to <buffer-list>" {
+    SCRIPT {
+        SendKeys "{Ctrl+x}b*" + _arg1 + "*{Enter}"
+    }
+}
+
+LIST "1to20" {
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+    "10"
+    "11"
+    "12"
+    "13"
+    "14"
+    "15"
+    "16"
+    "17"
+    "18"
+    "19"
+    "20"
+}
+
+LIST "0to9" {
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+}
+}

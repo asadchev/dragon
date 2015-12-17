@@ -1,0 +1,207 @@
+MENU "terminal-linux.dvc" {
+STATE "" {
+
+COMMAND "equal quotes" {
+    KEYS {
+        =""{Left}
+    }
+}
+
+COMMAND "dollar parens" {
+    KEYS {
+        $(){Left}
+    }
+}
+
+LIST "commands" {
+    "ssh"
+    "make"
+    "cmake"
+    "sudo"
+    "grep"
+    "less"
+    "head"
+    "tail"
+    "emacs"
+    "valgrind"
+    "gdb"
+    "tmux"
+}
+
+COMMAND "<commands>" {
+    SCRIPT {
+        SendKeys _arg1 + " "
+    }
+}
+
+LIST "apt-get" {
+    "remove"
+    "install"
+    "update"
+    "upgrade"
+}
+
+COMMAND "apt-get <apt-get>" {
+    SCRIPT {
+        SendKeys "apt-get " + _arg1 + " "
+    }
+}
+
+COMMAND "git  " {
+    KEYS {
+        git  
+    }
+}
+
+COMMAND "git fetch " {
+    KEYS {
+        git fetch 
+    }
+}
+
+COMMAND "git fetch all " {
+    KEYS {
+        git fetch --all 
+    }
+}
+
+COMMAND "git log " {
+    KEYS {
+        git log 
+    }
+}
+
+COMMAND "git clone " {
+    KEYS {
+        git clone 
+    }
+}
+
+COMMAND "git branch " {
+    KEYS {
+        git branch 
+    }
+}
+
+COMMAND "git commit " {
+    KEYS {
+        git commit 
+    }
+}
+
+COMMAND "git commit amend " {
+    KEYS {
+        git commit --amend 
+    }
+}
+
+COMMAND "git commit all " {
+    KEYS {
+        git commit --all 
+    }
+}
+
+COMMAND "git add " {
+    KEYS {
+        git add 
+    }
+}
+
+COMMAND "git push " {
+    KEYS {
+        git push 
+    }
+}
+
+COMMAND "git push force " {
+    KEYS {
+        git push --force 
+    }
+}
+
+COMMAND "git pull " {
+    KEYS {
+        git pull 
+    }
+}
+
+COMMAND "git checkout " {
+    KEYS {
+        git checkout 
+    }
+}
+
+COMMAND "git checkout force " {
+    KEYS {
+        git checkout --force 
+    }
+}
+
+COMMAND "git diff " {
+    KEYS {
+        git diff 
+    }
+}
+
+COMMAND "git reset " {
+    KEYS {
+        git reset 
+    }
+}
+
+COMMAND "git reset hard " {
+    KEYS {
+        git reset --hard 
+    }
+}
+
+COMMAND "git show " {
+    KEYS {
+        git show 
+    }
+}
+
+COMMAND "git rebase " {
+    KEYS {
+        git rebase 
+    }
+}
+
+COMMAND "git rebase continue " {
+    KEYS {
+        git rebase --continue 
+    }
+}
+
+COMMAND "git rebase abort " {
+    KEYS {
+        git rebase --abort 
+    }
+}
+
+COMMAND "git stash " {
+    KEYS {
+        git stash 
+    }
+}
+
+COMMAND "git stash apply " {
+    KEYS {
+        git stash apply 
+    }
+}
+
+COMMAND "git stash pop " {
+    KEYS {
+        git stash pop 
+    }
+}
+
+COMMAND "git cherry-pick " {
+    KEYS {
+        git cherry-pick 
+    }
+}
+
+}
+}

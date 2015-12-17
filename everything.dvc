@@ -1,0 +1,2369 @@
+MENU "terminal-boost.dvc" {
+STATE "" {
+
+LIST "alnum" {
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "q"
+    "r"
+    "s"
+    "t"
+    "u"
+    "v"
+    "w"
+    "x"
+    "y"
+    "z"
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+LIST "digits" {
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+COMMAND "include boost" {
+    SCRIPT {
+        SendKeys "#include <boost/>" + "{Left}"
+    }
+}
+
+
+LIST "headers" {
+    "mpl"
+    "fusion"
+    "type_traits"
+    "preprocessornumeric"
+}
+
+COMMAND "include boost <headers>" {
+    SCRIPT {
+        SendKeys "#include <boost/" + _arg1 + "/>" + "{Left}"
+    }
+}
+
+
+LIST "mpl-query" {
+    "find"
+    "find if"
+    "contains"
+    "count"
+    "count if"
+    "lower bound"
+    "upper bound"
+    "min element"
+    "max element"
+    "equal"
+}
+
+COMMAND "M. P. L. <mpl-query>" {
+    SCRIPT {
+        SendKeys "mpl::" + _arg1 + "<>" + "{Left}"
+    }
+}
+
+
+LIST "mpl-classes" {
+    "vector"
+    "list"
+    "deque"
+    "set"
+    "map"
+    "range c"
+    "vector c"
+    "list c"
+    "set c"
+    "string"
+}
+
+COMMAND "M. P. L. <mpl-classes>" {
+    SCRIPT {
+        SendKeys "mpl::" + _arg1 + "<>" + "{Left}"
+    }
+}
+
+
+LIST "mpl-intrinsic" {
+    "at"
+    "at c"
+    "back"
+    "begin"
+    "clear"
+    "empty"
+    "end"
+    "erase"
+    "erase key"
+    "front"
+    "has key"
+    "insert"
+    "insert range"
+    "is sequence"
+    "key type"
+    "order"
+    "pop back"
+    "pop front"
+    "push back"
+    "push front"
+    "sequence tag"
+    "size"
+    "value type"
+}
+
+COMMAND "M. P. L. <mpl-intrinsic>" {
+    SCRIPT {
+        SendKeys "mpl::" + _arg1 + "<>" + "{Left}"
+    }
+}
+
+
+LIST "mpl-transform" {
+    "copy"
+    "copy if"
+    "transform"
+    "replace"
+    "replace if"
+    "remove"
+    "remove if"
+    "unique"
+    "partition"
+    "stable partition"
+    "sort"
+    "reverse"
+    "reverse copy"
+    "reverse copy if"
+    "reverse transform"
+    "reverse replace"
+    "reverse replace if"
+    "reverse remove"
+    "reverse remove if"
+    "reverse unique"
+    "reverse partition"
+    "reverse stable partition"
+}
+
+COMMAND "M. P. L. <mpl-transform>" {
+    SCRIPT {
+        SendKeys "mpl::" + _arg1 + "<>" + "{Left}"
+    }
+}
+
+
+LIST "mpl-bool" {
+    "true"
+    "false"
+}
+
+COMMAND "M. P. L. <mpl-bool>" {
+    SCRIPT {
+        SendKeys "mpl::" + _arg1 + "_"
+    }
+}
+
+
+LIST "mpl-keyword" {
+    "and"
+    "or"
+    "int"
+    "bool"
+    "if"
+    "not"
+    "void"
+}
+
+COMMAND "M. P. L. <mpl-keyword>" {
+    SCRIPT {
+        SendKeys "mpl::" + _arg1 + "_<>" + "{Left}"
+    }
+}
+
+
+LIST "fusion" {
+    "at"
+    "map"
+    "size"
+    "for_each"
+    "result_of"
+    "transform"
+}
+
+COMMAND "fusion <fusion>" {
+    SCRIPT {
+        SendKeys "fusion::" + _arg1 + "<>" + "{Left}"
+    }
+}
+
+
+LIST "ublas" {
+    "matrix"
+    "vector"
+    "trans"
+    "range"
+    "projectmatrix_expressionvector_expression"
+}
+
+COMMAND "ublas <ublas>" {
+    SCRIPT {
+        SendKeys "ublas::" + _arg1
+    }
+}
+
+
+}
+}
+
+MENU "terminal-c++.dvc" {
+STATE "" {
+
+LIST "include-list" {
+    "memory"
+    "vector"
+    "list"
+    "set"
+    "map"
+    "algorithm"
+    "string"
+    "atomic"
+    "chronothread"
+}
+
+COMMAND "include <include-list>" {
+    SCRIPT {
+        SendKeys "#include <" + _arg1 + ">"
+    }
+}
+
+}
+}
+MENU "terminal-emacs.dvc" {
+STATE "" {
+
+LIST "say-list" {
+    "yes"
+    "no"
+}
+
+COMMAND "say <say-list>" {
+    SCRIPT {
+        SendKeys _arg1 + "{Enter}"
+    }
+}
+
+LIST "last" {
+    "last"
+    "previous"
+    "back"
+}
+
+LIST "next" {
+    "next"
+    "forward"
+    "jump"
+    "right"
+}
+
+LIST "down" {
+    "next"
+    "forward"
+    "jump"
+    "down"
+}
+
+LIST "back" {
+    "back"
+    "previous"
+    "left"
+}
+
+LIST "up" {
+    "back"
+    "previous"
+    "up"
+}
+
+COMMAND "save" {
+    KEYS {
+        {Ctrl+x}{Ctrl+s}
+    }
+}
+
+COMMAND "kill emacs" {
+    KEYS {
+        {Ctrl+x}{Ctrl+c}
+    }
+}
+
+COMMAND "save and quit" {
+    KEYS {
+        {Ctrl+x}{Ctrl+s}
+        {Ctrl+x}{Ctrl+c}
+    }
+}
+
+COMMAND "compile" {
+    KEYS {
+        {Esc}xcompile{Enter}
+    }
+}
+
+COMMAND "save compile" {
+    KEYS {
+        {Ctrl+x}{Ctrl+s}
+        {Esc}xrecompile{Enter}
+    }
+}
+
+COMMAND "suspend emacs" {
+    KEYS {
+        {Ctrl+x}{Ctrl+z}
+    }
+}
+
+COMMAND "find file" {
+    KEYS {
+        {Ctrl+x}{Ctrl+f}
+    }
+}
+
+COMMAND "search" {
+    KEYS {
+        {Ctrl+s}
+    }
+}
+
+COMMAND "search again" {
+    KEYS {
+        {Ctrl+s}{Ctrl+s}
+    }
+}
+
+COMMAND "back search" {
+    KEYS {
+        {Ctrl+r}
+    }
+}
+
+COMMAND "back search again" {
+    KEYS {
+        {Ctrl+r}{Ctrl+r}
+    }
+}
+
+COMMAND "jump error" {
+    KEYS {
+        {Ctrl+x}`
+    }
+}
+
+COMMAND "next error" {
+    KEYS {
+        {Ctrl+x}`
+    }
+}
+
+COMMAND "other window" {
+    KEYS {
+        {Ctrl+x}o
+    }
+}
+
+COMMAND "scroll other" {
+    KEYS {
+        {Esc}xscroll-other-window{Enter}
+    }
+}
+
+COMMAND "scroll up other" {
+    KEYS {
+        {Esc}xscroll-other-window-down{Enter}
+    }
+}
+
+COMMAND "other end" {
+    KEYS {
+        {Esc}xend-of-buffer-other-window{Enter}
+    }
+}
+
+COMMAND "repeat" {
+    KEYS {
+        {Ctrl+x}z
+    }
+}
+
+COMMAND "next line" {
+    KEYS {
+        {Ctrl+n}
+    }
+}
+
+COMMAND "kill this line" {
+    KEYS {
+        {Esc}xkill-whole-line{Enter}
+    }
+}
+
+COMMAND "cancel" {
+    KEYS {
+        {Ctrl+g}
+    }
+}
+
+COMMAND "recenter" {
+    KEYS {
+        {Ctrl+l}
+    }
+}
+
+COMMAND "control slash" {
+    KEYS {
+        {Ctrl+/}
+    }
+}
+
+COMMAND "meta space" {
+    KEYS {
+        {Esc}{Space}
+    }
+}
+
+COMMAND "transpose words" {
+    KEYS {
+        {Esc}xtranspose words{Enter}
+    }
+}
+
+COMMAND "transpose lines" {
+    KEYS {
+        {Esc}xtranspose lines{Enter}
+    }
+}
+
+COMMAND "line start" {
+    KEYS {
+        {Ctrl+a}
+    }
+}
+
+COMMAND "line end" {
+    KEYS {
+        {Ctrl+e}
+    }
+}
+
+COMMAND "end of line" {
+    KEYS {
+        {Ctrl+e}
+    }
+}
+
+COMMAND "yank" {
+    KEYS {
+        {Ctrl+y}
+    }
+}
+
+COMMAND "pop yank" {
+    KEYS {
+        {Esc}xyank-pop{Enter}
+    }
+}
+
+COMMAND "yank pop" {
+    KEYS {
+        {Esc}xyank-pop{Enter}
+    }
+}
+
+COMMAND "set mark" {
+    KEYS {
+        {Ctrl+Space}
+    }
+}
+
+COMMAND "copy to register" {
+    KEYS {
+        {Esc}xcopy-to-register{Enter}
+    }
+}
+
+COMMAND "insert register" {
+    KEYS {
+        {Esc}xinsert-register{Enter}
+    }
+}
+
+COMMAND "copy to register <1to20>" {
+    SCRIPT {
+        SendKeys "{Esc}xcopy-to-register{Enter}" + _arg1 + "{Enter}"
+    }
+}
+
+COMMAND "insert register <1to20>" {
+    SCRIPT {
+        SendKeys "{Esc}xinsert-register{Enter}" + _arg1 + "{Enter}"
+    }
+}
+
+COMMAND "<next> word" {
+    KEYS {
+        {Alt+f}
+    }
+}
+
+COMMAND "<back> word" {
+    KEYS {
+        {Alt+b}
+    }
+}
+
+COMMAND "<down> line" {
+    KEYS {
+        {Ctrl+n}
+    }
+}
+
+COMMAND "<up> line" {
+    KEYS {
+        {Ctrl+p}
+    }
+}
+
+COMMAND "<next> <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Alt+f}"
+    }
+}
+
+COMMAND "<back> <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Alt+b}"
+    }
+}
+
+COMMAND "<down> <1to20> lines" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Ctrl+n}"
+    }
+}
+
+COMMAND "<up> <1to20> lines" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Ctrl+p}"
+    }
+}
+
+LIST "kill-list" {
+    "buffer"
+    "this buffer"
+    "some buffers"
+    "compilation"
+    "whole line"
+    "grep"
+}
+
+COMMAND "kill <kill-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xkill " + _arg1 + "{Enter}"
+    }
+}
+
+LIST "mark-list" {
+    "buffer"
+    "line"
+    "sentence"
+    "paragraph"
+    "word"
+}
+
+COMMAND "mark <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg1 + "{Enter}"
+    }
+}
+
+LIST "region-list" {
+    "region"
+    "that"
+}
+
+LIST "region-command-list" {
+    "kill"
+    "indent"
+    "comment"
+    "downcase"
+    "upcase"
+}
+
+COMMAND "<region-command-list> <region-list>" {
+    SCRIPT {
+        SendKeys "{Esc}x" + _arg1 + " region" + "{Enter}"
+    }
+}
+
+COMMAND "<region-command-list> <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg2 + "{Enter}" + "{Esc}x" + _arg1 + " region" + "{Enter}"
+    }
+}
+
+COMMAND "replace <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg1 + "{Enter}" + "{Esc}xreplace-string{Enter}"
+    }
+}
+
+COMMAND "copy <mark-list>" {
+    SCRIPT {
+        SendKeys "{Esc}xmark " + _arg1 + "{Enter}" + "{Alt+w}"
+    }
+}
+
+LIST "emacs-commands" {
+    "doxymacs find next func"
+    "doxymacs font lock"
+    "doxymacs insert blank multiline comment"
+    "doxymacs insert blank singleline comment"
+    "doxymacs insert file comment"
+    "doxymacs insert function comment"
+    "doxymacs insert grouping comments"
+    "doxymacs insert member comment"
+    "doxymacs lookup"
+    "doxymacs mode"
+    "doxymacs rescan tags"
+    "doxymacs version"
+    "hippie expand"
+    "join line"
+    "open line"
+    "eval buffer"
+    "eval expression"
+    "load library"
+    "recover this file"
+    "replace buffer in windows"
+    "replace rectangle"
+    "replace regexp"
+    "replace string"
+    "server edit"
+    "shell command"
+    "shell command on region"
+    "shell script mode"
+    "scroll up"
+    "scroll down"
+    "linum mode"
+    "snippet mode"
+}
+
+COMMAND "<emacs-commands>" {
+    SCRIPT {
+        SendKeys "{Esc}x" + _arg1 + "{Enter}"
+    }
+}
+
+LIST "undo-that" {
+    "undo"
+    "undo that"
+}
+
+COMMAND "<undo-that>" {
+    KEYS {
+        {Ctrl+/}
+    }
+}
+
+COMMAND "<undo-that> <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Ctrl+/}"
+    }
+}
+
+COMMAND "<next> tab" {
+    SCRIPT {
+        SendKeys "{Esc}xtabbar-forward{Enter}"
+    }
+}
+
+COMMAND "<back> tab" {
+    SCRIPT {
+        SendKeys "{Esc}xtabbar-backward{Enter}"
+    }
+}
+
+LIST "go-to-line" {
+    "go to line"
+    "line"
+    "jump line"
+}
+
+COMMAND "<go-to-line>" {
+    KEYS {
+        {Alt+g}
+    }
+}
+
+COMMAND "<go-to-line> <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + "{Alt+g}"
+    }
+}
+
+COMMAND "<go-to-line> <1to20> <0to9>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + _arg3 + "{Alt+g}"
+    }
+}
+
+COMMAND "<go-to-line> <1to20> <0to9> <0to9>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2 + _arg3 + _arg4 + "{Alt+g}"
+    }
+}
+
+COMMAND "repeat <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg1 + "{Ctrl+x}z"
+    }
+}
+
+COMMAND "kill <1to20>" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg1) + "{Ctrl+d}"
+    }
+}
+
+COMMAND "kill word" {
+    KEYS {
+        {Alt+d}
+    }
+}
+
+COMMAND "kill <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg1) + "{Alt+d}"
+    }
+}
+
+COMMAND "kill <last> word" {
+    KEYS {
+        {Esc}{Backspace}
+    }
+}
+
+COMMAND "kill <last> <1to20> words" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg2) + "{Esc}{Backspace}"
+    }
+}
+
+COMMAND "kill <1to20> lines" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + Str$(_arg1) + "{Esc}xkill-whole-line{Enter}"
+    }
+}
+
+COMMAND "<next> buffer" {
+    KEYS {
+        {Esc}xnext-buffer{Enter}
+    }
+}
+
+LIST "buffer-list" {
+    "compilation"
+    "shell"
+    "scratch"
+}
+
+COMMAND "switch to <buffer-list>" {
+    SCRIPT {
+        SendKeys "{Ctrl+x}b*" + _arg1 + "*{Enter}"
+    }
+}
+
+LIST "1to20" {
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+    "10"
+    "11"
+    "12"
+    "13"
+    "14"
+    "15"
+    "16"
+    "17"
+    "18"
+    "19"
+    "20"
+}
+
+LIST "0to9" {
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+}
+}
+MENU "global.dvc" {
+STATE "" {
+
+LIST "lowercase" {
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "q"
+    "r"
+    "s"
+    "t"
+    "u"
+    "v"
+    "w"
+    "x"
+    "y"
+    "z"
+}
+
+LIST "alnum" {
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "q"
+    "r"
+    "s"
+    "t"
+    "u"
+    "v"
+    "w"
+    "x"
+    "y"
+    "z"
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+LIST "digit" {
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+LIST "1-20" {
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+    "10"
+    "11"
+    "12"
+    "13"
+    "14"
+    "15"
+    "16"
+    "17"
+    "18"
+    "19"
+    "20"
+}
+
+LIST "character" {
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "q"
+    "r"
+    "s"
+    "t"
+    "u"
+    "v"
+    "w"
+    "x"
+    "y"
+    "z"
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+    "/"
+}
+
+COMMAND "open words" {
+    SCRIPT {
+        HeardWord "open", "vocabulary", "editor"
+    }
+}
+
+
+COMMAND "firefox" {
+    SCRIPT {
+        HeardWord "switch", "to", "Firefox"
+    }
+}
+
+
+COMMAND "open commands" {
+    SCRIPT {
+        HeardWord "open", "command", "browser"
+    }
+}
+
+
+LIST "special-symbol" {
+    "backslash"
+    "underscore"
+    "caret"
+    "pound"
+    "percent"
+    "dollar"
+    "ampersand"
+    "star"
+    "hyphen"
+    "comma"
+    "slash"
+    "point"
+}
+
+COMMAND "<special-symbol>" {
+    SCRIPT {
+        cmd = _arg1
+        if cmd = "backslash" then cmd = "\"
+        if cmd = "underscore" then cmd = "_"
+        if cmd = "caret" then cmd = "^"
+        if cmd = "pound" then cmd = "#"
+        if cmd = "percent" then cmd = "%"
+        if cmd = "dollar" then cmd = "$"
+        if cmd = "ampersand" then cmd = "&"
+        if cmd = "star" then cmd = "*"
+        if cmd = "hyphen" then cmd = "-"
+        if cmd = "comma" then cmd = ","
+        if cmd = "slash" then cmd = "/"
+        if cmd = "point" then cmd = "."
+        SendKeys cmd
+        HeardWord "\No-Caps"
+        HeardWord "\No-Space"
+    }
+}
+
+
+COMMAND "<special-symbol> <special-symbol>" {
+    SCRIPT {
+        s1 = _arg1
+        s2 = _arg2
+        if s1 = "backslash" then s1 = "\"
+        if s1 = "underscore" then s1 = "_"
+        if s1 = "caret" then s1 = "^"
+        if s1 = "pound" then s1 = "#"
+        if s1 = "percent" then s1 = "%"
+        if s1 = "dollar" then s1 = "$"
+        if s1 = "ampersand" then s1 = "&"
+        if s1 = "star" then s1 = "*"
+        if s1 = "hyphen" then s1 = "-"
+        if s1 = "comma" then s1 = ","
+        if s1 = "slash" then s1 = "/"
+        if s1 = "point" then s1 = "."
+        if s2 = "backslash" then s2 = "\"
+        if s2 = "underscore" then s2 = "_"
+        if s2 = "caret" then s2 = "^"
+        if s2 = "pound" then s2 = "#"
+        if s2 = "percent" then s2 = "%"
+        if s2 = "dollar" then s2 = "$"
+        if s2 = "ampersand" then s2 = "&"
+        if s2 = "star" then s2 = "*"
+        if s2 = "hyphen" then s2 = "-"
+        if s2 = "comma" then s2 = ","
+        if s2 = "slash" then s2 = "/"
+        if s2 = "point" then s2 = "."
+        SendKeys s1 + s2
+        HeardWord "\No-Caps"
+        HeardWord "\No-Space"
+    }
+}
+
+
+COMMAND "brakets <alnum>" {
+    SCRIPT {
+        SendKeys "[" + _arg1 + "]"
+    }
+}
+
+
+COMMAND "braces <alnum>" {
+    SCRIPT {
+        SendKeys "{{" + _arg1 + "}}"
+    }
+}
+
+
+COMMAND "parens <alnum>" {
+    SCRIPT {
+        SendKeys "(" + _arg1 + ")"
+    }
+}
+
+
+COMMAND "quotes <alnum>" {
+    SCRIPT {
+        SendKeys "'" + _arg1 + "'"
+    }
+}
+
+
+LIST "number" {
+    "number"
+    "num"
+    "choose"
+}
+
+COMMAND "<number> <digit>" {
+    SCRIPT {
+        SendKeys _arg2
+    }
+}
+
+
+COMMAND "<number> <digit> <digit>" {
+    SCRIPT {
+        SendKeys _arg2 + _arg3
+    }
+}
+
+
+COMMAND "<number> <digit> <digit> <digit>" {
+    SCRIPT {
+        SendKeys _arg2 + _arg3 + _arg4
+    }
+}
+
+
+LIST "alt" {
+    "alt"
+    "meta"
+}
+
+COMMAND "<alt> tab" {
+    SCRIPT {
+        SendKeys "{Alt+Tab}"
+    }
+}
+
+
+COMMAND "<alt> <character>" {
+    SCRIPT {
+        SendKeys "{Alt+" + _arg2 + "}"
+    }
+}
+
+
+COMMAND "control <lowercase>" {
+    SCRIPT {
+        SendKeys "{Ctrl+" + _arg1 + "}"
+        HeardWord "\No-Caps"
+    }
+}
+
+
+LIST "key" {
+    "up"
+    "left"
+    "backspace"
+    "enter"
+    "delete"
+    "right"
+    "escape"
+    "space"
+    "tab"
+    "down"
+}
+
+COMMAND "<key> <1-20>" {
+    SCRIPT {
+        I = 0
+        DO UNTIL I = _arg2
+        SendKeys "{" + _arg1 + "}"
+        I = I+1
+        LOOP
+    }
+}
+
+
+COMMAND "<1-20> <key>" {
+    SCRIPT {
+        I = 0
+        DO UNTIL I = _arg1
+        SendKeys "{" + _arg2 + "}"
+        I = I+1
+        LOOP
+    }
+}
+
+
+LIST "global-cmd" {
+    "tab"
+    "escape"
+    "backspace"
+    "comma space"
+    "enter"
+}
+
+COMMAND "<global-cmd>" {
+    SCRIPT {
+        cmd = _arg1
+        if cmd = "tab" then cmd = "{tab}"
+        if cmd = "escape" then cmd = "{escape}"
+        if cmd = "backspace" then cmd = "{backspace}"
+        if cmd = "comma space" then cmd = ", "
+        if cmd = "enter" then cmd = "{enter}"
+        SendKeys cmd
+    }
+}
+
+
+COMMAND "cap <lowercase>" {
+    SCRIPT {
+        SendKeys UCase$(_arg1)
+    }
+}
+
+
+}
+}
+
+MENU "terminal-linux.dvc" {
+STATE "" {
+
+COMMAND "equal quotes" {
+    KEYS {
+        =""{Left}
+    }
+}
+
+COMMAND "dollar parens" {
+    KEYS {
+        $(){Left}
+    }
+}
+
+LIST "commands" {
+    "ssh"
+    "make"
+    "cmake"
+    "sudo"
+    "grep"
+    "less"
+    "head"
+    "tail"
+    "emacs"
+    "valgrind"
+    "gdb"
+    "tmux"
+}
+
+COMMAND "<commands>" {
+    SCRIPT {
+        SendKeys _arg1 + " "
+    }
+}
+
+LIST "apt-get" {
+    "remove"
+    "install"
+    "update"
+    "upgrade"
+}
+
+COMMAND "apt-get <apt-get>" {
+    SCRIPT {
+        SendKeys "apt-get " + _arg1 + " "
+    }
+}
+
+COMMAND "git  " {
+    KEYS {
+        git  
+    }
+}
+
+COMMAND "git fetch " {
+    KEYS {
+        git fetch 
+    }
+}
+
+COMMAND "git fetch all " {
+    KEYS {
+        git fetch --all 
+    }
+}
+
+COMMAND "git log " {
+    KEYS {
+        git log 
+    }
+}
+
+COMMAND "git clone " {
+    KEYS {
+        git clone 
+    }
+}
+
+COMMAND "git branch " {
+    KEYS {
+        git branch 
+    }
+}
+
+COMMAND "git commit " {
+    KEYS {
+        git commit 
+    }
+}
+
+COMMAND "git commit amend " {
+    KEYS {
+        git commit --amend 
+    }
+}
+
+COMMAND "git commit all " {
+    KEYS {
+        git commit --all 
+    }
+}
+
+COMMAND "git add " {
+    KEYS {
+        git add 
+    }
+}
+
+COMMAND "git push " {
+    KEYS {
+        git push 
+    }
+}
+
+COMMAND "git push force " {
+    KEYS {
+        git push --force 
+    }
+}
+
+COMMAND "git pull " {
+    KEYS {
+        git pull 
+    }
+}
+
+COMMAND "git checkout " {
+    KEYS {
+        git checkout 
+    }
+}
+
+COMMAND "git checkout force " {
+    KEYS {
+        git checkout --force 
+    }
+}
+
+COMMAND "git diff " {
+    KEYS {
+        git diff 
+    }
+}
+
+COMMAND "git reset " {
+    KEYS {
+        git reset 
+    }
+}
+
+COMMAND "git reset hard " {
+    KEYS {
+        git reset --hard 
+    }
+}
+
+COMMAND "git show " {
+    KEYS {
+        git show 
+    }
+}
+
+COMMAND "git rebase " {
+    KEYS {
+        git rebase 
+    }
+}
+
+COMMAND "git rebase continue " {
+    KEYS {
+        git rebase --continue 
+    }
+}
+
+COMMAND "git rebase abort " {
+    KEYS {
+        git rebase --abort 
+    }
+}
+
+COMMAND "git stash " {
+    KEYS {
+        git stash 
+    }
+}
+
+COMMAND "git stash apply " {
+    KEYS {
+        git stash apply 
+    }
+}
+
+COMMAND "git stash pop " {
+    KEYS {
+        git stash pop 
+    }
+}
+
+COMMAND "git cherry-pick " {
+    KEYS {
+        git cherry-pick 
+    }
+}
+
+}
+}
+MENU "my-emacs.dvc" {
+STATE "" {
+
+LIST "emacs-backward" {
+    "backward"
+    "go back"
+    "move back"
+    "previous"
+    "go to previous"
+}
+
+LIST "emacs-forward" {
+    "forward"
+    "go forward"
+    "move forward"
+    "next"
+    "go to next"
+}
+
+LIST "emacs-delete" {
+    "delete"
+    "delete next"
+    "kill"
+    "kill next"
+}
+
+LIST "emacs-delete-last" {
+    "backward delete"
+    "backward kill"
+    "delete last"
+    "delete previous"
+    "kill last"
+    "kill previous"
+}
+
+LIST "emacs-capitalize" {
+    "cap"
+    "cap next"
+    "capitalize"
+    "capitalize next"
+}
+
+LIST "emacs-capitalize-last" {
+    "backward capitalize"
+    "cap last"
+    "cap previous"
+    "capitalize last"
+    "capitalize previous"
+}
+
+LIST "emacs-upcase" {
+    "all caps"
+    "all caps next"
+    "up case"
+    "up case next"
+}
+
+LIST "emacs-upcase-last" {
+    "all caps last"
+    "all caps previous"
+    "backward up case"
+    "up case last"
+    "up case previous"
+}
+
+LIST "emacs-downcase" {
+    "down case"
+    "down case next"
+    "no caps"
+    "no caps next"
+}
+
+LIST "emacs-downcase-last" {
+    "backward down case"
+    "down case last"
+    "down case previous"
+    "no caps last"
+    "no caps previous"
+}
+
+LIST "emacs-beginning-of" {
+    "backward"
+    "beginning of"
+    "go back 1"
+    "go to beginning of"
+    "move back 1"
+    "move to beginning of"
+}
+
+LIST "emacs-end-of" {
+    "end of"
+    "forward"
+    "go forward 1"
+    "go to end of"
+    "move forward 1"
+    "move to end of"
+}
+
+LIST "emacs-defun" {
+    "defun"
+    "function"
+}
+
+LIST "emacs-defuns" {
+    "defuns"
+    "functions"
+}
+
+LIST "emacs-reverse" {
+    "backward"
+    "reverse"
+}
+
+LIST "emacs-mark" {
+    "mark"
+    "mark next"
+    "select"
+    "select next"
+}
+
+LIST "emacs-mark-last" {
+    "backward mark"
+    "backward select"
+    "mark last"
+    "mark previous"
+    "select last"
+    "select previous"
+}
+
+LIST "emacs-region" {
+    "region"
+    "selection"
+    "that"
+}
+
+LIST "emacs-expression" {
+    "expression"
+    "sexp"
+}
+
+LIST "emacs-expressions" {
+    "expressions"
+    "sexps"
+}
+
+LIST "emacs-spell" {
+    "ispell"
+    "spell"
+}
+
+LIST "emacs-delete-flag" {
+    "delete"
+    "flag"
+}
+
+LIST "emacs-evaluate" {
+    "eval"
+    "evaluate"
+}
+
+LIST "emacs-describe" {
+    "describe"
+    "help"
+}
+
+LIST "alnum" {
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "q"
+    "r"
+    "s"
+    "t"
+    "u"
+    "v"
+    "w"
+    "x"
+    "y"
+    "z"
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+LIST "digit" {
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+}
+
+LIST "1-10" {
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+    "10"
+}
+
+LIST "character" {
+    "a"
+    "b"
+    "c"
+    "d"
+    "e"
+    "f"
+    "g"
+    "h"
+    "i"
+    "j"
+    "k"
+    "l"
+    "m"
+    "n"
+    "o"
+    "p"
+    "q"
+    "r"
+    "s"
+    "t"
+    "u"
+    "v"
+    "w"
+    "x"
+    "y"
+    "z"
+    "0"
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9"
+    "/"
+}
+
+COMMAND "kill tab" {
+    SCRIPT {
+        SendKeys "{Alt+x}" + "my-emacs-command-kill-tab"
+        SendKeys "{Enter}"
+    }
+}
+
+
+COMMAND "kill <1-10> tabs" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg1
+        SendKeys "{Alt+x}" + "my-emacs-command-kill-tab"
+        SendKeys "{Enter}"
+    }
+}
+
+
+COMMAND "<emacs-forward> <1-10> tabs" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2
+        SendKeys "{Alt+x}" + "my-emacs-command-next-tab"
+        SendKeys "{Enter}"
+    }
+}
+
+
+COMMAND "<emacs-backward> <1-10> tabs" {
+    SCRIPT {
+        SendKeys "{Ctrl+u}" + _arg2
+        SendKeys "{Alt+x}" + "my-emacs-command-previous-tab"
+        SendKeys "{Enter}"
+    }
+}
+
+
+LIST "syntax" {
+    "blank"
+    "point"
+    "symbol"
+    "close"
+    "open"
+}
+
+LIST "syntax-plural" {
+    "blanks"
+    "points"
+    "symbols"
+    "close"
+    "open"
+}
+
+COMMAND "<emacs-forward> <syntax>" {
+    SCRIPT {
+        SendKeys "{Alt+x}" + "my-emacs-command-forward-" + _arg2
+        SendKeys "{Enter}"
+    }
+}
+
+
+COMMAND "<emacs-forward> <1-10> <syntax-plural>" {
+    SCRIPT {
+        tmp = _arg3
+        if tmp = "symbols" then tmp = "symbol"
+        if tmp = "points" then tmp = "point"
+        if tmp = "blanks" then tmp = "blank"
+        SendKeys "{Ctrl+u}" + _arg2
+        SendKeys "{Alt+x}" + "my-emacs-command-forward-" + tmp
+        SendKeys "{Enter}"
+    }
+}
+
+
+COMMAND "<emacs-backward> <syntax>" {
+    SCRIPT {
+        SendKeys "{Alt+x}" + "my-emacs-command-backward-" + _arg2
+        SendKeys "{Enter}"
+    }
+}
+
+
+COMMAND "<emacs-backward> <1-10> <syntax-plural>" {
+    SCRIPT {
+        tmp = _arg3
+        if tmp = "symbols" then tmp = "symbol"
+        if tmp = "points" then tmp = "point"
+        if tmp = "blanks" then tmp = "blank"
+        SendKeys "{Ctrl+u}" + _arg2
+        SendKeys "{Alt+x}" + "my-emacs-command-backward-" + tmp
+        SendKeys "{Enter}"
+    }
+}
+
+
+LIST "my-emacs-region" {
+    "buffer"
+    "function"
+    "word"
+    "expression"
+    "paragraph"
+    "line"
+    "sentence"
+    "region"
+}
+
+LIST "my-emacs-region-cmd" {
+    "kill"
+    "beautify"
+    "indent"
+    "comment"
+    "uncomment"
+    "copy"
+    "dupe"
+    "replace"
+    "regex"
+    "mark"
+    "downcase"
+    "upcase"
+}
+
+# COMMAND "<my-emacs-region-cmd> <my-emacs-region>" {
+#     SCRIPT {
+#         SendKeys "{Alt+x}" + "my-emacs-command-" + _arg1 + "-" + _arg2
+#         SendKeys "{Enter}"
+#     }
+# }
+
+
+# COMMAND "<my-emacs-region-cmd> <1-10> <my-emacs-region>" {
+#     SCRIPT {
+#         SendKeys "{Ctrl+u}" + _arg2
+#         SendKeys "{Alt+x}" + "my-emacs-command-" + _arg1 + "-" + _arg3
+#         SendKeys "{Enter}"
+#     }
+# }
+
+
+LIST "my-emacs-buffer" {
+    "compilation"
+    "shell"
+    "scratch"
+}
+
+COMMAND "switch to <my-emacs-buffer>" {
+    SCRIPT {
+        SendKeys "{Ctrl+x}" + "b" + "*" + _arg1 + "*" + "{Enter}"
+    }
+}
+
+
+LIST "my-emacs-command" {
+    "next tab"
+    "previous tab"
+    "next tab group"
+    "previous tab group"
+    "expand"
+    "check syntax"
+    "next syntax error"
+    "previous syntax error"
+    "open browser"
+    "switch to browser"
+    "quit browser"
+    "open google"
+    "next form"
+    "previous form"
+    "reload page"
+    "go forward"
+    "go back"
+    "go to url"
+    "bookmark this page"
+    "go to bookmarks"
+    "go to link"
+    "open terminal"
+    "next terminal"
+    "previous terminal"
+    "go to directories"
+    "go to methods"
+    "go to symbols"
+    "go to edit"
+    "go to analyze"
+    "go to compile"
+    "update methods"
+    "update directories"
+    "max methods"
+    "max symbols"
+    "max analyze"
+    "restore windows"
+    "max edit"
+    "toggle compile"
+    "toggle ecb"
+    "scroll down compile"
+    "scroll up compile"
+    "complete"
+    "show doc"
+    "show summary"
+    "describe class"
+    "fast jump"
+    "jump include"
+    "jump definition"
+    "jump implementation"
+    "jump prototype"
+    "jump tag"
+    "go to inbox"
+    "run gamess"
+    "debug gamess"
+    "save compile"
+    "build"
+    "build and run"
+    "build and debug"
+}
+
+COMMAND "<my-emacs-command>" {
+    SCRIPT {
+        SendKeys "{Alt+x}" + "my-emacs-command-" + _arg1
+        SendKeys "{Enter}"
+    }
+}
+
+
+}
+}
+
+MENU "terminal-programming.dvc" {
+        STATE "" {
+
+                LIST "scope" {
+                        "public"
+                        "private"
+                        "protected"
+                }
+
+                COMMAND "<scope>" {
+                        SCRIPT {
+                                SendKeys _arg1 + ":"
+                        }
+                }
+
+                LIST "tparam" {
+                        "class"
+                        "typename"
+                        "size_t"
+                }
+
+                COMMAND "template<tparam>" {
+                        SCRIPT  {
+                                SendKeys "template<" + _arg1 + " >" + "{Left}"
+                        }
+                }
+
+                COMMAND "template" {
+                        SCRIPT  {
+                                SendKeys "template<>" + "{Left}"
+                        }
+                }
+
+                LIST "operators" {
+                        "star"
+                        "member pointer"
+                        "scope"
+                        "plus"
+                        "equal"
+                        "equal equal"
+                        "not equal"
+                        "less than"
+                        "less equal"
+                        "greater than"
+                        "greater equal"
+                        "plus equal"
+                        "minus equal"
+                        "times equal"
+                        "minus minus"
+                        "logical and"
+                        "logical or"
+                        "minus"
+                        "left shift"
+                        "right shift"
+                        "bar equal"
+                        "and equal"
+                }
+
+                COMMAND "<operators>" {
+                        SCRIPT {
+                                if _arg1 = "star" then SendKeys "*"
+                                if _arg1 = "member pointer" then SendKeys "->"
+                                if _arg1 = "scope" then SendKeys "::"
+                                if _arg1 = "plus" then SendKeys " + "
+                                if _arg1 = "equal" then SendKeys " = "
+                                if _arg1 = "equal equal" then SendKeys " == "
+                                if _arg1 = "not equal" then SendKeys " != "
+                                if _arg1 = "less than" then SendKeys " < "
+                                if _arg1 = "less equal" then SendKeys " <= "
+                                if _arg1 = "greater than" then SendKeys " > "
+                                if _arg1 = "greater equal" then SendKeys " >= "
+                                if _arg1 = "plus equal" then SendKeys " += "
+                                if _arg1 = "minus equal" then SendKeys " -= "
+                                if _arg1 = "times equal" then SendKeys " *= "
+                                if _arg1 = "minus minus" then SendKeys " -- "
+                                if _arg1 = "logical and" then SendKeys " && "
+                                if _arg1 = "logical or" then SendKeys " || "
+                                if _arg1 = "minus" then SendKeys " - "
+                                if _arg1 = "left shift" then SendKeys " << "
+                                if _arg1 = "right shift" then SendKeys " >> "
+                                If _arg1 = "bar equal" Then SendKeys " |= "
+                                If _arg1 = "and equal" Then SendKeys " |= "
+                        }
+
+                }
+
+                COMMAND "operator <type>" {
+                        SCRIPT {
+                                SendKeys "operator " + _arg1
+                        }
+                }
+
+                COMMAND "operator <operators>" {
+                        SCRIPT {
+                                SendKeys "operator"
+                                if _arg1 = "star" then SendKeys "*"
+                                if _arg1 = "member pointer" then SendKeys "->"
+                                if _arg1 = "plus" then SendKeys "+"
+                                if _arg1 = "equal" then SendKeys "="
+                                if _arg1 = "equal equal" then SendKeys "=="
+                                if _arg1 = "not equal" then SendKeys "!="
+                                if _arg1 = "less than" then SendKeys "<"
+                                if _arg1 = "less equal" then SendKeys "<="
+                                if _arg1 = "greater than" then SendKeys ">"
+                                if _arg1 = "greater equal" then SendKeys ">="
+                                if _arg1 = "plus equal" then SendKeys "+="
+                                if _arg1 = "minus equal" then SendKeys "-="
+                                if _arg1 = "times equal" then SendKeys "*="
+                                if _arg1 = "minus minus" then SendKeys "--"
+                                if _arg1 = "logical and" then SendKeys "&&"
+                                if _arg1 = "logical or" then SendKeys "||"
+                                if _arg1 = "minus" then SendKeys "-"
+                                if _arg1 = "left shift" then SendKeys "<<"
+                                if _arg1 = "right shift" then SendKeys ">>"
+                        }
+                }
+
+                COMMAND "star this" {
+                        KEYS {
+                                *this
+                        }
+                }
+
+                COMMAND "this pointer" {
+                        KEYS {
+                                this->
+                        }
+                }
+
+
+                LIST "types" {
+                        "int"
+                        "float"
+                        "double"
+                        "size_t"
+                        "auto"
+                }
+
+                COMMAND "<types> <alnum>" {
+                        SCRIPT {
+                                SendKeys _arg1 + " " + _arg2
+                        }
+                }
+
+                COMMAND "<types>" {
+                        SCRIPT {
+                                SendKeys _arg1
+                        }
+                }
+
+
+                COMMAND "const <types>" {
+                        SCRIPT {
+                                SendKeys "const " + _arg1
+                        }
+                }                                   
+
+                COMMAND "<types> pointer" {
+                        SCRIPT {
+                                SendKeys _arg1 + " *"
+                        }
+                }                                   
+
+                COMMAND "const <types> pointer" {
+                        SCRIPT {
+                                SendKeys "const " + _arg1 + " *"
+                        }
+                }                                   
+
+                COMMAND "<types> array" {
+                        SCRIPT {
+                                SendKeys "new " + _arg1 + "[]" + "{LEFT}"
+                        }
+                }
+
+                LIST "headers" {
+                        "stdio.h"
+                        "algorithm"
+                        "iostream"
+                        "vector"
+                        "string"
+                        "iterator"
+                }
+
+                LIST "hash-statement" {
+                        "if"
+                        "ifdef"
+                        "else"
+                        "define"
+                        "ifndef"
+                        "endif"
+                        "undef"
+                }
+
+                COMMAND "hash <hash-statement>" {
+                        SCRIPT {
+                                SendKeys "#" + _arg1
+                        }
+                }
+
+                COMMAND "hash include" {
+                        SCRIPT {
+                                SendKeys "#include "
+                                SendKeys "{shift+'}" + "{shift+'}" + "{LEFT}"
+                                HeardWord "\No-Space"
+                                HeardWord "\No-Caps"
+                        }
+                }
+
+                COMMAND "include <headers>" {
+                        SCRIPT {
+                                header = _arg1
+                                SendKeys "#include <" + header + ">"
+                        }
+                }
+
+                LIST "control-statement" {
+                        "if"
+                        "for"
+                        "while"
+                        "foreach"
+                }
+
+                LIST "cast-template" {
+                        "const"
+                        "static"
+                        "reinterpret"
+                }
+
+                COMMAND "<cast-template> cast" {
+                        SCRIPT {
+                                SendKeys _arg1 + "_cast<>()" + "{Left}{Left}{Left}"
+                        }
+                }
+
+                LIST "member-function" {
+                        "begin"
+                        "end"
+                        "size"
+                        "front"
+                        "back"
+                        "start"
+                        "stop"
+                        "clear"
+                        "empty"
+                        "at"
+                        "push_back"
+                }
+
+                COMMAND  "dot <member-function>" {
+                        SCRIPT {
+                                SendKeys "." + _arg1 + "()"
+                        }
+                }               
+
+                COMMAND  "pointer <member-function>" {
+                        SCRIPT {
+                                SendKeys "->" + _arg1 + "()"
+                        }
+                }               
+
+                COMMAND  "<control-statement> statement" {
+                        SCRIPT {
+                                SendKeys _arg1 + " ()" + "{Left}"
+                        }
+                }
+
+                LIST "keywords" {
+                        "const"
+                        "typedef"
+                        "inline"
+                        "struct"
+                        "namespace"
+                        "typename"
+                        "static"
+                        "void"
+                        "return"
+                        "operator"
+                }
+                COMMAND "<keywords>" {
+                        SCRIPT {
+                                SendKeys _arg1 + " "
+                        }
+                }
+                
+                LIST "std-keywords"{
+                        "cout"
+                }
+
+                LIST "std-container" {
+                        "vector"
+                        "map"
+                        "pair"
+                        "tuple"
+                }
+
+                LIST "std-functions"{
+                        "max"
+                        "fill"
+                        "find"
+                        "copy"
+                        "min"
+                }
+
+                COMMAND "STD <std-keywords>" {
+                        SCRIPT {
+                                if _arg1 = "cout" Then  SendKeys "std::cout << std::endl;"
+                        }
+                }                                   
+
+                COMMAND "STD <std-container>" {
+                        SCRIPT {
+                                SendKeys "std::" + _arg1 + "<>" + "{Left}"
+                        }
+                }                                   
+
+                COMMAND "STD <std-functions>" {
+                        SCRIPT {
+                                SendKeys "std::" + _arg1+ "()" + "{Left}"
+                        }
+                }                                   
+
+                COMMAND "template brackets" {
+                        SCRIPT {
+                                SendKeys "<>" + "{Left}"
+                        }
+                }                                   
+
+                COMMAND "type define" {
+                        SCRIPT {
+                                SendKeys "typedef "
+                        }
+                }                                   
+
+                COMMAND "<scopes> scope" {
+                        SCRIPT {
+                                SendKeys _arg1 + "::"
+                        }
+                }
+
+                LIST "scopes" {
+                        "std"
+                        "boost"
+                }
+
+                COMMAND "parens <alnum>" {
+                        SCRIPT {
+                                SendKeys "(" + _arg1 + ")"
+                        }
+                }
+
+                COMMAND "brackets <alnum>" {
+                        SCRIPT {
+                                SendKeys "[" + _arg1 + "]"
+                        }
+                }
+
+                LIST "class" {
+                        "class"
+                        "typename"
+                }
+
+                COMMAND "<class> <alnum>" {
+                        SCRIPT {
+                                SendKeys _arg1 + " " + UCase$(_arg2)
+                        }
+                }
+                
+                COMMAND "template <alnum>" {
+                        SCRIPT {
+                                SendKeys "<" + UCase$(_arg1) + ">"
+                        }
+                }
+                
+                COMMAND "equal <alnum>" {
+                        SCRIPT {
+                                SendKeys " = " + _arg1
+                        }
+                }
+
+                LIST "yasnippet" {
+                        "if"
+                        "for"
+                        "class"
+                        "once"
+                        "def"
+                        "include"
+                }
+                COMMAND "<yasnippet> Tab" {
+                        SCRIPT {
+                                SendKeys _arg1 + "{tab}"
+                        }
+                }
+
+                LIST "alnum" {
+                        "0"
+                        "1"
+                        "2"
+                        "3"
+                        "4"
+                        "5"
+                        "6"
+                        "7"
+                        "8"
+                        "9"
+                        "a"
+                        "b"
+                        "c"
+                        "d"
+                        "e"
+                        "f"
+                        "g"
+                        "h"
+                        "i"
+                        "j"
+                        "k"
+                        "l"
+                        "m"
+                        "n"
+                        "o"
+                        "p"
+                        "q"
+                        "r"
+                        "s"
+                        "t"
+                        "u"
+                        "v"
+                        "w"
+                        "x"
+                        "y"
+                        "z"
+                }
+
+        }
+}
